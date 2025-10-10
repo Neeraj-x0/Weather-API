@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import weatherRouter from "./src/routes/weather";
-import redisClient from "./src/configs/redis";
+// ...existing code...
 import locationRouter from "./src/routes/location";
 import cors from "cors";
 
@@ -15,6 +15,6 @@ app.use("/weather", weatherRouter);
 app.use("/locations", locationRouter);
 
 app.listen(PORT, () => {
-  redisClient.connect();
+// ...existing code...
   return console.log(`App working on Port: ${PORT}`);
 });

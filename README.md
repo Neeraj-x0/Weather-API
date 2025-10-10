@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Weather App documentation! This repository contains the code for a simple weather application that retrieves weather and location information using the OpenWeatherMap API and caches the data using Redis. This documentation provides an overview of how to use and set up the application.
+Welcome to the Weather App documentation! This repository contains the code for a simple weather application that retrieves weather and location information using the OpenWeatherMap API. This documentation provides an overview of how to use and set up the application.
 
 ## Endpoints
 
@@ -86,5 +86,5 @@ To use the Weather App, you can make HTTP GET requests to the specified endpoint
 
 ## Caching
 
-The Weather App implements caching using Redis to improve performance and reduce the load on the external API. Cached data is stored for a duration of 6 hours. If data is found in the cache, it will be returned with the `isCache` property set to `true` in the response.
+// ...existing code...
 
