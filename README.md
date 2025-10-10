@@ -6,7 +6,7 @@ Welcome to the Weather App documentation! This repository contains the code for 
 
 ## Endpoints
 
-The Weather App provides two main endpoints:
+The Weather App provides three main endpoints:
 
 ### 1. Weather Information
 
@@ -77,6 +77,27 @@ GET /location?query=New%20York
     }
   ],
   "isCache": false
+}
+```
+
+### 3. Your Name
+
+This endpoint returns the developer's name in JSON format.
+
+- **Endpoint**: `/yourname`
+- **Method**: GET
+
+#### Example Request:
+
+```http
+GET /yourname
+```
+
+#### Example Response:
+
+```json
+{
+  "name": "Neeraj-x0"
 }
 ```
 
