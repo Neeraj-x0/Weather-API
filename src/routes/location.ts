@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Request, Response, Router } from "express";
-import redisClient from "../configs/redis";
+// ...existing code...
 import { QueryType } from "../types";
 
 const locationRouter: Router = Router();
@@ -14,12 +14,9 @@ locationRouter.get(
       return res.status(400).send({ error: "Location is missing!" });
     }
 
-    const cachedData = await redisClient.get(`location:${query}`);
+  // ...existing code...
     
-    if (cachedData) {
-      console.log("cachedData");
-      return res.json({ locations: JSON.parse(cachedData), isCache: true });
-    } 
+    // Redis caching removed
 
     const locations = await axios.get(
       `http://api.openweathermap.org/geo/1.0/direct?q=${query}&appid=${process.env.WEATHER_API_KEY}`
@@ -29,10 +26,8 @@ locationRouter.get(
       return res.json({ locations: [], isCache: false });
     }
 
-    redisClient.set(`location:${query}`, JSON.stringify(locations.data), {
-      EX: 6 * 60 * 60,
-      NX: true,
-    });
+  // ...existing code...
+    // Redis caching removed
 
     return res.json({ locations: locations.data, isCache: false });
   }
